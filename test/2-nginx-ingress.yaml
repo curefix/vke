@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    external-dns.alpha.kubernetes.io/hostname: "test.example.com" # 테스트할 도메인 입력
+  name: nginx-ingress
+spec:
+  rules:
+  - host: "test.example.com" # 테스트할 도메인 입력
+    http:
+      paths:
+      - backend:
+          service:
+            name: nginx-svc-test
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
