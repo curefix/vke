@@ -54,3 +54,8 @@ kubectl apply -f 8-account-and-binding.yaml
 kubectl -n kubernetes-dashboard create token admin-user
 
 ```
+
+# 기타 내용
+## cert-manager 문제 발생
+https://2kindsofcs.tistory.com/72
+https://cert-manager.io/docs/configuration/acme/dns01/
