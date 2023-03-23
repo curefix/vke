@@ -17,7 +17,8 @@ spec:
     - "dashboard.example.com" # ssl 적용될 도메인 입력
     secretName: wildcard-tls
   rules:
-  - http:
+  - host: "dashboard.example.com" # 라우팅 될 호스트 정보 입력
+    http:
       paths:
       - path: /
         pathType: Prefix
