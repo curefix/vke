@@ -98,8 +98,14 @@ kubectl get secret secret-github-actions-kubernetes-vultr -o yaml
 kubectl create secret docker-registry github-container-registry --docker-server=ghcr.io --docker-username=<github-username> --docker-password=<token>
 ```
 
+# 기타 명령
 
-# 기타 내용
+```
+# 원하는 pod의 원하는 컨테이너로 명령어를 사용하고 싶을 때
+kubectl exec -n shineone <POD> -c <container-name> -it /bin/bash
+```
+
+# 참고사항
 ## cert-manager 문제 발생
 https://2kindsofcs.tistory.com/72
 https://cert-manager.io/docs/configuration/acme/dns01/
